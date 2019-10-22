@@ -1,0 +1,32 @@
+﻿@page
+@model NoviFlow_For_NaviStar_Web_Authenication.Pages.AnalyticsModel
+@{
+    ViewData["Title"] = "Analytics";
+}
+
+<h1>Analytics</h1>
+
+@if (User.IsInRole("team lead"))
+{
+    <section>
+        <h1>Welcome, team lead!</h1>
+    </section>
+}
+else if (User.IsInRole("data analyst"))
+{
+    <section>
+        <h1>Welcome, data analytics!</h1>
+    </section>
+}
+else if (User.IsInRole("diagnostics"))
+{
+    <section>
+        <h1>Welcome, diagnostics!</h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1>Welcome.</h1>
+    </section>
+}

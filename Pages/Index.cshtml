@@ -1,0 +1,42 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+
+<section class="text-center">
+
+    <h1 class="display-4"><b><i>Navistar</i></b></h1>
+    <p><b><i>Driving You Into the Future!</i></b></p>
+</section>
+
+@if (User.IsInRole("admin"))
+{
+    <section>
+        <h1><i><b>Welcome, administrator!</b></i></h1>
+    </section>
+}
+else if (User.IsInRole("slt"))
+{
+    <section>
+        <h1><i><b>Welcome, slt!</b></i></h1>
+    </section>
+}
+else if (User.IsInRole("depthead"))
+{
+    <section>
+        <h1><i><b>Welcome, dept head!</b></i></h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1><i><b>Welcome.</b></i></h1>
+    </section>
+}  
+<section>
+    
+</section>
